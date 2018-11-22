@@ -509,6 +509,7 @@ function load_more_roadtrips(){
 		
 		$posts = get_posts( array(
 			'category_name'  => 'itinerary',
+			'post_status' => 'publish',
 			'post_type' => 'page',
 			'posts_per_page' => 9,
 			'post__not_in' => array( $current_page_id ),
@@ -558,7 +559,7 @@ function load_more_articles(){
 		query_posts( array(
 			'category_name'  => $category_name,
 			'post_type' => array('page','post'),
-			'post_status' => 'publish',
+			// 'post_status' => 'publish',
 			// 'post_status' => array('publish', 'draft'),
 			'orderby' => 'date',
 			'order' => 'DESC',
