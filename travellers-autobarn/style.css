@@ -1,0 +1,23 @@
+/*
+Theme Name: Traveller's Autobarn 2014
+Theme URI: http://www.travellers-autobarn.nl/
+Author: Fuse Digital
+Version: 0.1
+*/
+
+body{
+    background: none !important;
+}
+
+.navbar-top .nav li {
+    float:left;
+}
+
+
+.navbar-top .nav li a{
+    display:inline;
+}
+
+.navbar-top a:hover {
+    text-decoration: none !important;
+}

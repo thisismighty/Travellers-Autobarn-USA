@@ -1,0 +1,172 @@
+<?php
+    /*
+    Template Name: Vehicle List - Rental
+    */
+
+get_header();
+?>
+<?php //include("includes/breadcrumbs.php"); ?>
+<style>
+	.product-list .info{
+		
+	}
+	
+	.product-list .call-to-action{
+		
+	}
+	.product-list .image a{
+		position:relative;
+		display:block;
+	}
+	.product-list .image img.most-popular{
+		position:absolute;
+		top:10px;
+		left:-7px;
+		width:67%;
+		border-radius:0 !important;
+		-moz-border-radius:0 !important;
+		-webkit-border-radius:0 !important;
+	}
+
+</style>
+<div class="section product">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding" style="padding-bottom:0;">
+                <?php 
+                    if (have_posts()): 
+                        while(have_posts()): 
+                            the_post(); 
+                ?>
+                            <h1><?php the_title();?></h1>
+
+                            <?php the_content(); ?>
+
+                <?php 
+                        endwhile;
+                    endif;
+                ?>
+                <?php          
+                    $cat_id = get_cat_ID( 'Rentals' );
+                    $args = array(
+                        'posts_per_page'   => 100,
+                        'offset'           => 0,
+                        'category'  => $cat_id,
+                        
+                        'orderby'          => 'menu_order',
+                        'order'            => 'ASC',
+                        'include'          => '',
+                        'exclude'          => '',
+                        'post_type'        => 'page',
+                        'post_mime_type'   => '',
+						'posts_per_page'	   => 2,
+                        'post_parent'      => '',
+                        'post_status'      => 'publish',
+                        'suppress_filters' => true );
+           
+        
+            
+                        $myposts = get_posts( $args );
+                        
+                        
+                        foreach ( $myposts as $post ) : 
+                            setup_postdata( $post ); 
+                            $subtitle = get_field('subtitle');
+                            $img = get_field('car_image');
+                            $features_title = get_field('featured_items_title');
+                            $price = str_replace('$','',get_field('price'));
+							$most_popular_html='';
+							if(get_field('most_popular_vehicle')){
+								$most_popular_html='<img src="'.get_template_directory_uri().'/img/most-popular-rentals.png" class="most-popular" />';
+							}
+                ?>
+                                <div class="product-list">
+
+                                    <div class="info">
+
+                                        <h3><a href="<?php the_permalink();?>"><?php echo $post->post_title;?></a></h3>
+                                        <h4><?php echo $subtitle;?></h4>
+
+                                        <div class="image">
+                                            <a href="<?php the_permalink();?>"><img
+												src="<?php echo $img['url'];?>" class="img-responsive"><?=$most_popular_html?></a>
+
+                                        </div> <!-- image -->
+                                        
+                                        <?php 
+                                            if (have_rows('vehicle_features')):
+                                                                                          
+                                        ?>
+                                            <div class="text">
+                                                <div class="heading"><?php echo $features_title;?></div>
+                                                <ul>
+                                                    <?php
+                                                        while(have_rows('featured_items')):  
+                                                            the_row();
+                                                            $feature = get_sub_field('featured_item');
+                                                    ?>
+                                                            <li><?php echo $feature;?></li>
+                                                    <?php
+                                                        endwhile;
+                                                    ?>
+                                                </ul>
+                                            </div> <!-- text -->
+                                        <?php endif;?>
+                                            
+                                            <div class="clear"></div>
+                                        <div class="rentals-excerpt" style="padding:10px 0;">
+                                            <?php the_field('vehicle_excerpt');?>
+                                        </div>
+                                    </div> <!-- info -->
+
+                                    <div class="call-to-action">
+
+                                        <div class="price-container hidden-xs">
+
+                                            <div class="price-text">From</div>
+                                            <div class="price">
+                                                <span class="dollar">$</span><?php echo $price;?><span class="disclaimer">*</span>
+                                            </div>
+                                            <div class="price-text">a day</div>
+
+                                        </div> <!-- price-container -->
+
+                                        <div class="terms hidden-xs">*Conditions Apply - Prices may vary in Peak Seasons</div>
+
+                                        <a href="<?php echo get_site_url();?>/quick-quote/" class="btn btn-default visible-xs">Get a Quote & Book</a>
+                                        <!-- <a class="btn btn-default hidden-xs" href="<?php the_field('quick_quote_link', 'option');?>">Email Us</a> -->
+                                        
+                                        <a class="btn btn-default" href="<?php echo get_site_url();?>/contact-us/">Call Us</a>
+                                       
+                                        <a class="btn btn-default black btn-sm" href="<?php the_permalink();?>">Read more</a>
+
+                                    </div>
+
+                                </div> <!-- product-list -->
+                <?php
+                        endforeach;wp_reset_query();
+                ?>
+                <div class="pagebottom">
+                        <?php the_field('page_bottom');?>
+            </div>
+            </div> <!-- padding -->
+
+<?php include("includes/call-us.php"); ?>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 sidebar padding">
+                <?php include("includes/booking-form-usa-v2.php"); ?>
+                <?php include("includes/why-hire.php"); ?>
+				<?php //include("includes/au-hire.php");?>
+                <?php //include("includes/subscribe-form.php"); ?>
+              
+                <?php include("includes/blog.php"); ?>
+				<?php include("includes/sidebar-social.php"); ?> 
+            </div> <!-- sidebar -->
+        </div> <!-- row -->
+    </div> <!-- container -->
+</div> <!-- section product -->
+
+<?php get_footer(); ?>

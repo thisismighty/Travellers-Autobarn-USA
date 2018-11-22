@@ -1,0 +1,375 @@
+/* GENERAL */
+html,body{height:auto;}
+.container img{max-width:100%; height:auto;}
+.no-space-top{margin-top:-20px; padding-top:0;}
+.bg{position: absolute;width: 100%;height: 100%;top: 0;background: url(../../assets/images/shadow.png) bottom repeat-x;border-radius: 5px;z-index: 1;}
+.page-template-template-road-trip iframe{width:100%; height:400px;}
+.general h1{/* padding: 40px 0 0 0; */}
+.section.product, .section.general{margin-top:40px;}
+#ui-datepicker-div{z-index:100 !important;}
+
+/* BREADCRUMB */
+.breadcrumbs li{float:none; display: inline-block;}/* GENERAL */
+html,body{height:auto;}
+.container img{max-width:100%; height:auto;}
+.no-space-top{margin-top:-20px; padding-top:0;}
+.bg{position: absolute;width: 100%;height: 100%;top: 0;background: url(../../assets/images/shadow.png) bottom repeat-x;border-radius: 5px;z-index: 1;}
+.page-template-template-road-trip iframe{width:100%; height:400px;}
+.general h1{/* padding: 40px 0 0 0; */}
+.section.product, .section.general{margin-top:40px;}
+#ui-datepicker-div{z-index:100 !important;}
+
+/* BREADCRUMB */
+.breadcrumbs li{float:none; display: inline-block;}
+
+/* HEADER */
+.global-header .logo .site-flag{position:absolute; right:0; top:0;}
+.global-header .language select{position:relative; margin-top:-5px; border:0; font-style: normal; -webkit-font-smoothing: antialiased; text-transform: uppercase; }
+#menu-main-menu{width:100%;}
+.nav>li>a{padding-left:33px; padding-right:33px;}
+.global-header .share-icons { width: 155px; }
+.hamburger-social{margin-top:20px;}
+.hamburger-social input, .hamburger-social select{color:#333333; font-weight:100; text-align:center;}
+.hamburger-social select option{font-weight:100 !important; text-align:center !important;}
+
+/* BOOKING FORM */
+.booking-form.v7 select{border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;/* font-size: 13px !important; */}
+.booking-form.v7 .step2 select[name=PickupLocationID], .booking-form.v7 .step3 select[name=DropOffLocationID]{width: 47%;display:inline-block;/* font-size: 13px !important; */}
+.booking-form.v7 .step2 select[name=PickupTime], .booking-form.v7 .step3 select[name=ReturnTime]{width: 27.9%;display:inline-block; font-size: 13px !important}
+.booking-form.v7 .step2 input[type="text"], .booking-form.v7 .step3 input[type="text"]{margin-right:0;/* font-size: 13px !important; */}
+.booking-form.v7 .step2 input[name=PickupDateAlt], .booking-form.v7 .step3 input[name=ReturnDateAlt]{/* font-size: 13px !important; */}
+.booking-form input[type="text"] {width: 100%;/* font-size: 13px; */padding-left: 8px;padding-top: 4.3px;padding-bottom: 3px;}
+
+/* SECTION BANNER */
+.section-banner{margin-bottom:40px;}
+.section-banner h1{color:#fff;margin-top:0;padding-top: 6%;padding-bottom: 7%;}
+.section-banner.with-image.type-box .banner-box{width: 450px;height:300px;background:#f89828;padding:20px;overflow:hidden;}
+.section-banner.no-image{background: #727272;}
+.section-banner.type-box .banner-box h1{color:#333333;}
+.section-banner.type-clean h1{padding:9% 0; text-align:center; text-shadow: 1px 1px 1px black;}
+.section-banner.banner-travel-tips{width:100%;height:auto; background:url(../../img/banners/banner-travel-tips1.jpg) no-repeat; background-position: top center; background-size:cover; text-align:center;}
+.section-banner.banner-road-trips{width:100%;height:auto; background:url(../../img/banners/banner-roadtrips1.jpg) no-repeat; background-position: top center; background-size:cover; text-align:center;}
+
+.section-banner-2{height:240px;}
+@media screen and (max-width:767px){
+    .section-banner-2{height:150px;}
+}
+
+/* HOMEPAGE SLIDER */
+.slider-subheading{
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    line-height: normal;
+    padding: 10px 30px;
+    border-radius: 8px;
+    width: max-content;
+    margin-top: 10px;
+}
+.slider-subheading em{
+    text-shadow: none !important;
+    color: #f89828;
+    font-style: normal;
+}
+
+/* TRAVEL TIPS */
+.travel-tips-section h2{color:#000;}
+
+.articles-section{margin-top:30px; }
+.articles-section .travel-tips{margin-bottom:40px; position:relative;}
+.articles-section .travel-tips img{width:100%; height:auto; filter:brightness(100%); border-radius:5px;}
+.articles-section .travel-tips:hover img{filter:brightness(50%);}
+.articles-section .travel-tips .image-holder{margin-bottom:15px;}
+.articles-section .travel-tips .image-holder >a{position:relative;display: inline-block;}
+.articles-section .travel-tips .post-title{
+    color:#fff;
+    position:absolute;
+    /* margin-top:-50px; */
+    bottom: 0;
+    width: 100%;
+    padding: 13px 30px;
+    /* text-overflow: ellipsis; */
+    /* Required for text-overflow to do anything */
+    /* white-space: nowrap; */
+    overflow: hidden;
+    z-index: 1;
+}
+.articles-section .travel-tips .post-description{display:block; margin-bottom:10px;}
+
+.videos-section{margin-top:30px; }
+.videos-section .video-tips{margin-bottom:40px; position:relative;}
+.videos-section .video-tips img{width:100%;height:auto;filter:brightness(50%);border-radius:5px;}
+.videos-section .video-tips:hover img{filter:brightness(100%);}
+.videos-section .video-tips a:before{content:"";display:block;position:absolute;width:80px;height:80px;background:url(../images/play-orange.png) no-repeat;background-size:100% 100%;left:40%;top:32%;z-index: 1;}
+.videos-section .video-tips .post-title{color:#fff; position:absolute; margin-top:-50px; margin-left:30px;width:80%; 
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* ROAD TRIPS */
+.roadtrips-section h2{color:#000;}
+
+.roadtrips-section{margin-top:-15px; }
+.roadtrips-section .roadtrip{margin-bottom:40px; position:relative; float:none; display:inline-block;}
+.roadtrips-section .roadtrip img{width:100%; height:auto; filter:brightness(100%); border-radius:5px;}
+.roadtrips-section .roadtrip:hover img{ filter:brightness(50%);}
+.roadtrips-section .roadtrip .image-holder{margin-bottom:15px;position: relative;}
+.roadtrips-section .roadtrip .post-title{
+    font-size: 20px !important;
+    text-align: center;
+    color:#fff;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* background: rgba(0,0,0,0.6); */
+    position:absolute;
+    /* margin-top: -52px; */
+    padding-left:30px;
+    padding-right: 30px;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    padding-bottom: 20px;
+    /* text-overflow: ellipsis; */
+    /* Required for text-overflow to do anything */
+    /* white-space: nowrap; */
+    overflow: hidden;
+}
+.roadtrips-section .roadtrip .post-description{display:block; margin-bottom:10px;}
+
+.itineraries-section{margin-top:30px; }
+.itineraries-section .itinerary{margin-bottom:40px;position:relative;float: none;display: inline-block;}
+.itineraries-section .itinerary a{width:100%;height:100%;display:inline-block;position: relative;}
+.itineraries-section .itinerary img{width:100%;height:auto;filter:brightness(100%);border-radius:5px;}
+.itineraries-section .itinerary:hover img{filter:brightness(50%);}
+.itineraries-section .itinerary .post-title{
+    font-size: 20px !important;
+    color:#fff;
+    position:absolute;
+    /* margin-top:-50px; */
+    /* margin-left:30px; */
+    text-align:  center;
+    width: 100%;
+    left: 0;
+    padding-bottom: 15px;
+    bottom: 0;
+    z-index: 1;
+    /* text-overflow: ellipsis; */
+    /* Required for text-overflow to do anything */
+    /* white-space: nowrap; */
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* ROAD TRIP */
+.text-orange{color: #d44702;}
+.roadtrips-section h2{margin-bottom:30px;}
+
+.social-share .share{padding:0; font-weight:bold; color: #d44702; text-transform:uppercase; margin-bottom:0;}
+.more .social-share .share{display:inline-block; position:relative; top:-50px; left:60px;}
+.social-share .heateor_sss_sharing_container{display:inline-block; margin-right:20px;}
+.social-share .btn{display:inline-block; position:relative; top:-13px;}
+
+.roadtrip-stats{background: #fdb32c;border-radius:10px;padding: 20px;margin-top: 42px;}
+.roadtrip-stats .sub-title{font-size:20px; color: #ffffff;}
+.roadtrip-stats .circle-value{ width:70px; height:70px; display:block; border-radius:999px; border:2px solid #fff; float:left; margin-right:18px;}
+.roadtrip-stats .trip-info:not(:last-child){ margin-bottom:20px;}
+.roadtrip-stats .trip-info .info-title{display:block; padding-top: 13px; font-weight:bold;}
+.roadtrip-stats .trip-info.distance .circle-value{background-image:url(../../img/ico-distance.png);}
+.roadtrip-stats .trip-info.days .circle-value{background-image:url(../../img/ico-calendar.png);}
+.roadtrip-stats .trip-info.best-vehicle .circle-value{background-image:url(../../img/ico-trailer-car.png);}
+.roadtrip-stats .trip-info .circle-value{background-repeat:no-repeat; background-size:60% !important; background-position:center;}
+
+.highlights{display:block;}
+.highlights .highlight-image{margin-bottom:10px;}
+.highlights .highlight-image img{border-radius:5px;}
+.highlights .highlight:not(:last-child){margin-bottom:40px;}
+.highlights .sub-title{display:block; font-weight:bold; text-transform:uppercase;}
+.highlights .main-title{font-size:25px; display:block; padding:0 0 15px; text-transform:uppercase; font-weight:bold; color: #d44702;}
+
+.roadtrips-section .more{text-align:center;}
+
+.print-page .print-text{padding: 0;font-weight: bold;color: #d44702;text-transform: uppercase;margin-bottom: 6px;display: block;}
+.print-page a{background:orange;width:35px;height:35px;display:block;border-radius:999px;cursor: pointer;}
+.print-page img{width:60%; height:60%; display:block; position:relative; top:20%; left:16%;}
+
+/* ITINERARIES */
+.roadtrip-info{margin-top: 0px;}
+.roadtrip-info .sub-title{text-align:center;}
+.roadtrip-info .info-box a {text-decoration: none !important;}
+.roadtrip-info .info-box:hover:before {content: ""; background-color: rgba(0,0,0,.4); width: 100%; display: block; height: 100%; position: absolute; left: 0; top: 0; border-radius: 5px;}
+.roadtrip-info .info-box:before {content: ""; background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); width: 100%; display: block; height: 100%; position: absolute; left: 0; top: 0; border-radius: 5px;}
+.roadtrip-info .info-box{background: #777777;color:#fff;border-radius: 5px;padding:20px 30px;min-height:110px;background-position: center !important;background-size: cover !important;background-repeat: no-repeat !important;}
+.roadtrip-info .info-box .circle-value{float:left; position:absolute; border:2px solid #fff; border-radius:40px; width:70px; height:70px; padding:10px; overflow:hidden; font-size:14px; text-align:center; }
+.roadtrip-info .info-box .show-value{ width:100%; height:100%; display: flex; align-items: center; text-align:center;  flex-direction:column;  justify-content:center;}
+.roadtrip-info .info-box > span{/* padding-left: 90px; */width:  100%;max-width:100%;}
+.roadtrip-info .info-text{position: relative; display:inline-block; margin-top: 25px; }
+.roadtrip-info .info-box:not(:last-child){margin-bottom:20px;}
+.roadtrip-info .info-title{
+    text-align: center;
+    position: relative;
+    display:inline-block;
+    margin-top: 23px;
+    text-transform:uppercase;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 1;
+	position: absolute;
+    left: 0;
+    bottom: 20px;
+    }
+.roadtrip-info .info-box .full-link{position:absolute;width:100%;height:100%;left:0;background: rgba(0,0,0,0.2);top:0;z-index:1;border-radius: 5px;}
+.roadtrip-info .info-title a{color:#fff;}
+.roadtrip-info .info-box:hover a { text-decoration:underline;}
+.roadtrip-info .info-date{ position: relative; display:inline-block; margin-top: 0; font-size:14px; }
+.load-more-wrap{text-align:center;}
+
+.videos{display:block;}
+.videos .video-image {position:relative;}
+.videos .video-image a{position:relative; width:100%; height:100%; display:block;}
+.videos .video-image a > img{width:100%;height:auto;filter:brightness(50%);border-radius:5px;position:relative;z-index:0;display:block;}
+.videos .video-image:hover img{filter:brightness(100%);}
+.videos .video-image .video-title{ padding-left:30px; padding-bottom:30px;color:#fff; font-size:25px; font-weight:bold; text-transform:uppercase; z-index:2; position:absolute; width:80%; bottom:0; left:0; width:100%;}
+.videos .video-image .play-wrap{position:absolute;width: 100%;display:block;z-index:1;top:30%;text-align: center;}
+.videos .video-image .play-wrap img{width: 16%;height: 16%;text-align:center;margin:0 auto;}
+/* .videos .video-image a::before{content:"";display:block;position:absolute;width:80px;height:80px;background:url(../images/play-orange.png) no-repeat; background-size:100% 100%;left:42%;top:30%;z-index: 1;} */
+.videos .video:not(:last-child){margin-bottom:40px;}
+
+/* social share */
+.roadtrip-share .share-social{ float: left; margin-right: 25px;}
+.roadtrip-share h3{font-size: 20px;}
+.roadtrip-share .share-trip{float: left;}
+.roadtrip-share .share-trip a{margin-top: 5px;}
+
+/* FAQS */
+.section.faqs h2, .section.faqs h3, .section.faqs h4, .section.faqs h5{ color:#333333;}
+.section.faqs .panel-help .panel-heading{position:relative; padding-right:40px;}
+.section.faqs .panel-help .panel-heading, .section.faqs .panel-help .panel-heading h3{color:#333333; font-size:16px; }
+.section.faqs .panel-help .panel-heading i{position:absolute; right:15px; top:9px;}
+.section.faqs .panel-help{background:#f89828; padding:10px 0 0 0; border:0;}
+.section.faqs .panel-help .panel-body{background:#edebec;}
+
+/* OUR LOCATIONS */
+.section.locations h2, .section.locations h3, .section.locations h4, .section.locations h5{ color:#333333;}
+.section.locations .panel-help .panel-heading{position:relative; padding-right:40px;}
+.section.locations .panel-help .panel-heading, .section.locations .panel-help .panel-heading h3{color:#333333; font-size:16px; }
+.section.locations .panel-help .panel-heading i{position:absolute; right:15px; top:9px;}
+.section.locations .panel-help{background:#f89828; padding:10px 0 0 0; border:0;}
+.section.locations .panel-help .panel-body{background:#edebec;}
+
+/* QUICK BOOK */
+.page-template-quickquote .sidebar{margin-top: 57px;}
+
+/* LOCATION */
+.panel-group .panel-heading{background-color:#f89828 !important;}
+
+/* BLOG POST */
+.section-banner.post-banner{padding-bottom:16%;}
+.blog-sub-title{color:#D66D58; text-transform:uppercase; letter-spacing:1px; font-weight:600; display:block; margin-bottom:10px;}
+.blogpost .social-share{margin-bottom:20px; display:block;}
+.orange-border{border-bottom:15px solid #D64600; margin-bottom:80px; display:block;}
+.load-more-wrap .btn.load-more{padding:15px 70px; border-radius:10px}
+/* FOOTER */
+.footer .contact{/* background:none; */padding-bottom: 10px;padding-top: 14px;min-height: 239px;}
+
+/* COOKIE ALERT */
+#cookie-alert{position: fixed !important;bottom: 0;z-index: 99999999999;background: #323232;width: 100%;color: #ffffff;padding: 40px 20px;text-align: center; line-height:1.5;}
+#cookie-alert p{margin-bottom:5px;}
+#cookie-alert .action{margin-top:20px; display:block;}
+#cookie-alert a:not(.btn){color: #ffffff; text-decoration:underline;}
+
+/* RESPONSIVE */
+@media screen and (min-width:2560px){
+    .section-banner h1{padding:8% 0;}
+    .section-banner.type-clean h1{padding:16% 0 !important;}
+}
+@media screen and (min-width:2000px){
+    .section-banner h1{padding:8% 0;}
+    .section-banner.type-clean h1{padding:13% 0;}
+}
+@media screen and (min-width:1025px){    
+    .nav>li>a{padding-left: 29px;padding-right: 29px;}
+}
+@media screen and (max-width: 1024px){
+    .global-header .logo .site-flag{right:-16%; top:3px;}
+    .global-header .logo .site-flag img{width:50px; height: auto;}
+    .nav>li>a{padding-left: 27px;padding-right: 27px;}
+}
+@media screen and (max-width:980px){
+    .global-header .share-icons .sharethis{display:none;}
+    ul.nav{width:100%;}
+    .nav>li{width:16.66666666666667%;}
+    .nav>li>a{padding-left:0;padding-right:0;}
+	.roadtrip-sidebar{margin-bottom: 20px;}
+	.roadtrip-sidebar .roadtrip-stats{margin-top: 20px;}
+}
+@media screen and (max-width:769px){
+    .section-banner h1{ padding-top:10%; padding-bottom:14%;}
+    .roadtrip-info{margin-top:0;}
+    .footer .contact{min-height:0; margin-left:0px; margin-right:0px; }
+
+    body .banner .text .main-heading .slider-subheading{font-size:14px !important; padding:10px;}
+}
+@media screen and (max-width:767px){
+    
+    #cookie-alert {
+    padding: 20px 20px 0 20px !important;
+    }
+    
+    #cookie-alert p {
+    font-size: 12px !important;
+    line-height: 18px !important;
+    }
+    
+    .section.product{margin-top:0}
+    
+    #mobile-menu > a{font-size:12px !important;}
+    .global-header .logo{margin-bottom:20px; text-align:center;}
+    .global-header .logo img{width:70%; max-width: 254px;}
+    .global-header .logo .site-flag{position:initial;}
+
+    .section-banner.with-image.type-box .banner-box{max-width:90%; margin:0 auto; height: auto;}
+    .more .social-share .share, .more .social-share ul{display:none !important;}
+    .more .social-share .heateor_sss_horizontal_sharing{display:block; text-align:center; margin:0 auto;}
+    .more .social-share .heateor_sss_horizontal_sharing ul{display: inline-block;}
+    .more .social-share .share{display:block; position:initial;}
+    
+    body #owl-demo .owl-item .item .text .slider-subheading{font-size:14px !important;}    
+    .booking-form .heading .orange{line-height:1.5;}
+    .page-template-quickquote .sidebar{margin-top:0;}
+}
+@media screen and (max-width: 426px){
+    .global-header .logo .site-flag{/* display:none; */}
+    /* .global-header .logo .site-flag{left:-58%; top:125%;}
+    .global-header .logo .site-flag img{width:40px;}
+    .global-header .contact-details li.phone{padding-left:15%;} */
+    .global-header .contact-details li.phone{/*padding-left:35px;*/}
+	.global-header .contact-details li.phone .icon-phone{/* display: inline; */}
+    .global-header .contact-details li.phone i:before{/* content:""; *//* top:0; *//* margin-left:-40px; *//* position:absolute; *//* width:40px; *//* height:30px; *//* background: url(../images/header/usa-flag.jpg) no-repeat; *//* background-size:100% 100%; */}
+    .social-share .heateor_sss_sharing_container{display:block;}
+    .social-share .btn{top:0; margin-top:20px;}
+
+    body #owl-demo .owl-item .item .text .slider-subheading{font-size:12px !important; }
+
+    .videos .video-image .video-title{padding-bottom:10px; padding-left:20px; font-size:18px; position: absolute; top: 5px;}
+
+}
+@media screen and (max-width: 375px){
+	.videos .video-image .video-title{font-size:14px;}
+}
+
+/* PRINT */
+@media print{    
+    .no-print, .no-print * { display: none !important; }	
+	.print-page-break{ page-break-after: always !important; }	
+	.footer{display: none !important;}
+}
