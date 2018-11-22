@@ -274,10 +274,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 /* BLOG POST */
 .section-banner.post-banner{padding-bottom:16%;}
-.blog-sub-title{color:#D66D58; text-transform:uppercase; letter-spacing:1px; font-weight:600; display:block; margin-bottom:10px;}
+.general.blogpost h1{text-transform:capitalize;}
+.blog-sub-title{color: #d44702;text-transform:uppercase;letter-spacing: 3px;font-weight:600;display:block;margin-bottom:10px;}
 .blogpost .social-share{margin-bottom:20px; display:block;}
-.orange-border{border-bottom:15px solid #D64600; margin-bottom:80px; display:block;}
+.orange-border{border-bottom: 15px solid #d64600;margin-bottom:80px;display:block;}
 .load-more-wrap .btn.load-more{padding:15px 70px; border-radius:10px}
+
 /* FOOTER */
 .footer .contact{/* background:none; */padding-bottom: 10px;padding-top: 14px;min-height: 239px;}
 
@@ -318,6 +320,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     .footer .contact{min-height:0; margin-left:0px; margin-right:0px; }
 
     body .banner .text .main-heading .slider-subheading{font-size:14px !important; padding:10px;}
+}
+@media screen and (min-width:769px){    
+    .blogpost .post-content{padding-right:50px;}    
+    .blogpost .sidebar{padding-top:30px !important;}
 }
 @media screen and (max-width:767px){
     

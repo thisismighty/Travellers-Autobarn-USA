@@ -18,7 +18,7 @@ Template Name: Blog Post
 
 <div style="position: relative;">
 	<?php include("includes/section-blog-banner.php"); ?>
-	<div class="bg"></div>
+	<?php /*<div class="bg"></div> */ ?>
 </div>
 
 <div class="section general blogpost">
