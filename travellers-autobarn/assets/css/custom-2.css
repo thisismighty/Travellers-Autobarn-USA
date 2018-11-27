@@ -278,7 +278,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .blog-sub-title{color: #d44702;text-transform:uppercase;letter-spacing: 3px;font-weight:600;display:block;margin-bottom:10px;}
 .blogpost .social-share{margin-bottom:20px; display:block;}
 .orange-border{border-bottom: 15px solid #d64600;margin-bottom:80px;display:block;}
-.load-more-wrap .btn.load-more{padding:15px 70px; border-radius:10px}
+.load-more-wrap .btn.load-more,
+.load-more-wrap .btn.show-more{padding:15px 70px; border-radius:10px}
 
 /* FOOTER */
 .footer .contact{/* background:none; */padding-bottom: 10px;padding-top: 14px;min-height: 239px;}

@@ -560,7 +560,7 @@ function load_more_articles(){
 			'category_name'  => $category_name,
 			'post_type' => array('page','post'),
 			// 'post_status' => 'publish',
-			// 'post_status' => array('publish', 'draft'),
+			'post_status' => array('publish', 'draft'),
 			'orderby' => 'date',
 			'order' => 'DESC',
 			'posts_per_page' => -1,

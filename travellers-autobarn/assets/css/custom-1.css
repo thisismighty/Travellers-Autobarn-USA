@@ -754,10 +754,10 @@ html .hamburger-social.dark{
 /* BLOG PAGE */
 .blog-page h3{color: #000;text-transform: unset; margin-top: 15px;font-size: 23px;font-family: 'Gotham',Helvetica, sans-serif;font-weight: 600;}
 .blog-page img{border-radius: 7px;width: 100%;}
-.blog-page p{margin-bottom: 15px;font-size: 14px;color: #666;font-family: 'Arial', Helvetica, sans-serif;}
+.blog-page p{margin-bottom: 15px;font-size: 14px;color: #666;font-family: Helvetica, 'Arial', sans-serif;}
 .blog-page{margin-bottom: 30px;}
 .read-more{font-size: 14px;font-weight: bold;text-transform: uppercase;color: #cc3300;font-family: 'Arial', Helvetica, sans-serif;}
-.top_content p{font-size: 17px;color: #666;font-family: 'Arial', Helvetica, sans-serif;}
+.top_content p{font-size: 17px;color: #666;font-family: Helvetica, 'Arial', sans-serif;}
 .load-more-wrap{margin-top: 60px;}
 .blog_img{position: relative;}
 .blog-section .blog_img img{width:100%;height:auto;filter:brightness(100%);border-radius:5px;}

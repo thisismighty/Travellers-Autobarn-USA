@@ -3,6 +3,7 @@
 query_posts( array(
 	'category_name'  => $category_slug,
 	'post__not_in' => $excludes,
+	// 'post_type' => 'post',
 	'post_type' => array('page','post'),
 	// 'post_status' => 'publish',
 	'post_status' => array('draft','publish'),
@@ -39,7 +40,12 @@ if (have_posts()):
 		
 		echo '<div class="bg"></div>';
 		echo '</div>';
-		echo 		'<h3 class="post-title">'. $article_title .'</h3>';										
+		
+		$short_title = get_field('short_title');			
+		if ($short_title) 
+			echo '<h3 class="post-title">' . $short_title . '</h3>';
+		else
+			echo 		'<h3 class="post-title">'. $article_title .'</h3>';										
 		echo		'</a>';
 		echo '<p>' . get_the_excerpt() . '</p>';
 		

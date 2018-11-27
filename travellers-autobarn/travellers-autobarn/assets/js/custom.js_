@@ -1,0 +1,26 @@
+
+// Popover
+jQuery("[data-toggle=popover]").popover()
+jQuery('[data-toggle=popover]').on('click', function(e) {e.preventDefault(); return true;});
+
+// Placeholder fix for IE8 and under
+jQuery('input, textarea').placeholder();
+
+
+// Fix for IE10 - Internet Explorer 10 doesn't differentiate device width from viewport width
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement('style')
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      '@-ms-viewport{width:auto!important}'
+    )
+  )
+  document.querySelector('head').appendChild(msViewportStyle)
+}
+
+// Fix for Android 4.1 - On <select> elements, the Android stock browser will not display the side controls if there is a border-radius and/or border
+var nua = navigator.userAgent
+var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+if (isAndroid) {
+  jQuery('select.form-control').removeClass('form-control').css('width', '100%')
+}

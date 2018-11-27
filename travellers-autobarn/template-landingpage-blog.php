@@ -23,6 +23,10 @@ Template Name: Landing Page (Blog)
                     if (have_posts()): 
                         while(have_posts()): 
                             the_post(); 
+							$shorttitle = get_field('short_title');
+							// if ($shorttitle) 
+								// echo '<span class="blog-sub-title">' . $shorttitle . '</span>';
+							
                             the_content(); 
                         endwhile;
                     endif;
