@@ -1,26 +1,33 @@
 <div class="row display-data">
 <?php
 query_posts( array(
-	'category_name'  => $category_slug,
+	// 'category_name'  => $category_slug,
 	'post__not_in' => $excludes,
-	// 'post_type' => 'post',
-	'post_type' => array('page','post'),
-	// 'post_status' => 'publish',
-	'post_status' => array('draft','publish'),
+	'post_type' => array('post'),
+	// 'post_status' => array('publish'),
+	'post_status' => array('draft', 'publish'),
 	'posts_per_page' => $max_posts,
 	'paged' => 1,
-	// 'orderby' => 'menu_order',
-	'orderby' => 'ID',
+	'orderby' => 'post_date',
 	'order' => 'DESC',
 ) );
 
 $post_count=0;
+$incol_post_count=0;
+$open = 0;
+$maxponcol = 3;
 
 if (have_posts()): 
 	while(have_posts()): 
 		the_post(); 
 		
 		$more_class=$post_count < $max_posts ? 'less' : 'more';
+		
+		if($incol_post_count ==0 && ! $open){
+			// echo '<-- start -->'; //close post-column 
+			echo '<div class="post-column">'; 
+			$open=1;
+		}
 		
 		echo '<div class="blog-page col-lg-4 col-md-4 col-sm-6 col-xs-12 '. $more_class .'">';
 		echo		'<a href="'. get_the_permalink() .'">';
@@ -53,10 +60,24 @@ if (have_posts()):
 		echo '<span class="read-more">Read More</span>';
 		echo '</a>';
 		
-		echo '</div>';
+		echo '</div>';		
+		
+		if($incol_post_count==$maxponcol - 1 && $open){
+			// echo '<-- end -->'; //close post-column 
+			echo '</div>'; //close post-column 
+			$incol_post_count=0; //reset
+			$open=0;
+		}
 		
 		$post_count++;
+		if($open)
+			$incol_post_count++;
 	endwhile;
+	
+	if($open){
+		// echo '<-- end last-->'; //close post-column 	
+		echo '</div>'; //close unclosed wrap
+	}
 endif;
 
 

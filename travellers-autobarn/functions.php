@@ -558,7 +558,7 @@ function load_more_articles(){
 		
 		query_posts( array(
 			'category_name'  => $category_name,
-			'post_type' => array('page','post'),
+			'post_type' => array('post'),
 			// 'post_status' => 'publish',
 			'post_status' => array('publish', 'draft'),
 			'orderby' => 'date',

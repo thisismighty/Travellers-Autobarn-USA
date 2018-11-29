@@ -97,7 +97,7 @@ function Validate(resForm){
 	
 	if(checkIn_date < new Date(2019,1,1)){ //"01/02/2019"
 		// alert("Our business open official on the 1st of February 2019 – we sadly are unable to provide you with any quotes until then");
-		$("#message-usa .msg-text").html("We officially open on the 1st of february 2019");
+		$("#message-usa .msg-text").html('OUR "BRAND NEW" RV/CAMPERVANS WILL BE AVAILABLE STARTING FEBRUARY 1st 2019');
 		$("#msg1").click();
 		
 		return false;
@@ -301,11 +301,10 @@ $booking_form_jquery_ui_loaded++;
 			</div>
 			<div class="msg-description">
 				<h3 class="msg-text"></h3>
-				<p>We sadly are unable to provide you with any quotes until then.</p>
-				<p>Please come back soon and book your RV/Campervan road trip with us.</p>
+				<p>You can reserve your ride today and start your road trip after February 1st 2019.</p>
 			</div>
 			<div class="msg-button">
-				<a class="btn btn-default red btn-sm" href="#">SOUNDS GOOD</a>
+				<a class="btn btn-default red btn-sm" href="/quick-quote">BOOK NOW</a>
 			</div>
 		</div>
 	</div>
@@ -319,7 +318,7 @@ $booking_form_jquery_ui_loaded++;
 			<div class="msg-description">
 				<h3 class="msg-text"></h3>
 			</div>
-			<div class="msg-button">
+			<div class="msg-button xclose">
 				<a class="btn btn-default red btn-sm" href="#">SOUNDS GOOD</a>
 			</div>
 		</div>
@@ -339,7 +338,7 @@ jQuery(function ($) {
 		e.preventDefault();
 		$.magnificPopup.close();
 	});
-	$(document).on('click', '.msg-button .btn', function (e) {
+	$(document).on('click', '.xclose .btn', function (e) {
 		e.preventDefault();
 		$.magnificPopup.close();
 	});
