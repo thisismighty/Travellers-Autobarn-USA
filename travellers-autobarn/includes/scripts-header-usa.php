@@ -139,7 +139,7 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 
 
-<?php if (is_page_template('front-page.php')): ?>
+<?php if (is_page_template('front-page.php') || is_front_page() ): ?>
 		<link href="<?php echo get_template_directory_uri();  ?>/assets/css/owl.carousel.css" rel="stylesheet">
 		<link href="<?php echo get_template_directory_uri();  ?>/assets/css/owl.theme.css" rel="stylesheet">
 		<link href="<?php echo get_template_directory_uri();  ?>/assets/css/owl.transitions.css" rel="stylesheet">
