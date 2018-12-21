@@ -277,7 +277,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .general.blogpost h1{text-transform:capitalize;}
 .blog-sub-title{color: #d44702;text-transform:uppercase;letter-spacing: 3px;font-weight:600;display:block;margin-bottom:10px;}
 .blogpost .social-share{margin-bottom:20px; display:block;}
-.orange-border{border-bottom: 15px solid #d64600;margin-bottom:80px;display:block;}
+.orange-border{border-bottom: 8px solid #d64600;margin-bottom:80px;display:block;}
 .load-more-wrap .btn.load-more,
 .load-more-wrap .btn.show-more{padding:15px 70px; border-radius:10px}
 
@@ -368,7 +368,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     body #owl-demo .owl-item .item .text .slider-subheading{font-size:12px !important; }
 
     .videos .video-image .video-title{padding-bottom:10px; padding-left:20px; font-size:18px; position: absolute; top: 5px;}
-
+	.load-more-wrap .btn.load-more, .load-more-wrap .btn.show-more{ padding-left:0; padding-right:0; width:100%; }
 }
 @media screen and (max-width: 375px){
 	.videos .video-image .video-title{font-size:14px;}

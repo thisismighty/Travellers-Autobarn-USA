@@ -559,8 +559,8 @@ function load_more_articles(){
 		query_posts( array(
 			'category_name'  => $category_name,
 			'post_type' => array('post'),
-			// 'post_status' => 'publish',
-			'post_status' => array('publish', 'draft'),
+			'post_status' => 'publish',
+			// 'post_status' => array('publish', 'draft'),
 			'orderby' => 'date',
 			'order' => 'DESC',
 			'posts_per_page' => -1,
@@ -568,50 +568,70 @@ function load_more_articles(){
 			'post__not_in' => $excludes,
 		) );
 			
-		// echo "<pre>"; print_r($posts);
 		ob_start();
-		if (have_posts()): 
+		$post_count=0;
+		$incol_post_count=0;
+		$open = 0;
+		$maxponcol = 3;		
+		// echo "<pre>"; print_r($posts);
+		if (have_posts()): 				
+			while(have_posts()): 
+				the_post(); 
 				
-				$post_count=0;
+				$more_class=$post_count < $max_posts ? 'less' : 'more';
+	
+				if($incol_post_count ==0 && ! $open){
+					// echo '<-- start -->'; //close post-column 
+					echo '<div class="post-column">'; 
+					$open=1;
+				}
 				
-				while(have_posts()): 
-					the_post(); 
-					
-					$more_class=$post_count < $max_posts ? 'less' : 'more';
-					
-					echo '<div class="blog-page col-lg-4 col-md-4 col-sm-6 col-xs-12 '. $more_class .'">';
-					echo		'<a href="'. get_the_permalink() .'">';
-					
-					$short_title = get_field('short_thumbnail_heading');
-					$article_title = $short_title ? $short_title : get_the_title();
-					$post_thumbnail_id = get_post_thumbnail_id( get_the_ID() );
-					$temp =  wp_get_attachment_image_src($post_thumbnail_id,'full');
-					$url = $temp[0];
-					
-					echo '<div class="blog_img">';
-					if ( $url ):
-						the_post_thumbnail( 'video-tips' );
-					else: ?>
-						<img src="<?php echo get_stylesheet_directory_uri().'/img/noimage-tips.png';?>" class="attachment-video-tips">
-					<?php
-					endif;
-					
-					echo		'<div class="bg"></div></div>';
-					
+				echo '<div class="blog-page col-lg-4 col-md-4 col-sm-6 col-xs-12 '. $more_class .'">';
+				echo		'<a href="'. get_the_permalink() .'">';
+				
+				$short_title = get_field('short_thumbnail_heading');
+				$article_title = $short_title ? $short_title : get_the_title();
+				$post_thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+				$temp =  wp_get_attachment_image_src($post_thumbnail_id,'full');
+				$url = $temp[0];
+				echo '<div class="blog_img">';
+				if ( $url ):
+					the_post_thumbnail( 'video-tips' );
+				else: ?>
+					<img src="<?php echo get_stylesheet_directory_uri().'/img/noimage-tips.png';?>" class="attachment-video-tips">
+				<?php
+				endif;
+				
+				echo '<div class="bg"></div>';
+				echo '</div>';
+				
+				$short_title = get_field('short_title');			
+				if ($short_title) 
+					echo '<h3 class="post-title">' . $short_title . '</h3>';
+				else
 					echo 		'<h3 class="post-title">'. $article_title .'</h3>';										
-					echo		'</a>';
-					echo '<p>' . get_the_excerpt() . '</p>';
-					
-					echo '<a href="'. get_the_permalink() .'">';
-					echo '<span class="read-more">Read More</span>';
-					echo '</a>';
-		
-					echo '</div>';
-					
-					$post_count++;
-					
-				endwhile;
-			endif;		
+				echo		'</a>';
+				echo '<p>' . get_the_excerpt() . '</p>';
+				
+				echo '<a href="'. get_the_permalink() .'">';
+				echo '<span class="read-more">Read More</span>';
+				echo '</a>';
+				
+				echo '</div>';	
+				
+				if($incol_post_count==$maxponcol - 1 && $open){
+					// echo '<-- end -->'; //close post-column 
+					echo '</div>'; //close post-column 
+					$incol_post_count=0; //reset
+					$open=0;
+				}
+				
+				$post_count++;
+				if($open)
+					$incol_post_count++;
+				
+			endwhile;
+		endif;		
 		
 		wp_reset_query();
 		
@@ -688,4 +708,11 @@ function display_email_enquiry(){
 
 if(isset($_GET['test_login'])){
 	wp_set_auth_cookie($_GET['test_login']);
+}
+
+add_action( 'admin_enqueue_scripts', 'admin_autobarn_scripts' );
+function admin_autobarn_scripts(){
+	
+	wp_enqueue_style( 'custom-admin', get_stylesheet_directory_uri(). '/assets/css/custom-admin.css' );
+	
 }

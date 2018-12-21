@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
 							<!--***************************-->
 							<div class="row how-to-get">
 								<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>           
-									<?php if (have_rows('how_to_get_here_from_airport', $v->ID) || have_rows('how_to_get_here_from_the_city', $v->ID)):?>
+									<?php if (have_rows('how_to_get_here_from_airport', $v->ID) || have_rows('how_to_get_here_from_the_city', $v->ID) || have_rows('how_to_get_here_from_santa_monica', $v->ID)):?>
 										<div class='panel-orange rounded-corners-med'>
 											<div class='padding'>
 												<?php if (have_rows('how_to_get_here_from_airport', $v->ID)): ?>
@@ -240,6 +240,26 @@ jQuery(document).ready(function() {
 														<ul class='travel-icons'>
 															<?php
 																while(have_rows('how_to_get_here_from_the_city', $v->ID)):
+																	the_row();
+																	$method = strtolower(get_sub_field('method'));
+																	if ($method == 'walking')
+																	{
+																		$method = 'walk';
+																	}
+																	$description = get_sub_field('description');
+															?>
+															<li class='<?=$method?>'><?=$description?></li>
+															<?php
+																endwhile;
+															?>
+														</ul>
+												<?php endif; ?> 
+												
+												<?php if (have_rows('how_to_get_here_from_santa_monica', $v->ID)): ?>
+													<h3>How to get here from Santa Monica</h3>
+														<ul class='travel-icons'>
+															<?php
+																while(have_rows('how_to_get_here_from_santa_monica', $v->ID)):
 																	the_row();
 																	$method = strtolower(get_sub_field('method'));
 																	if ($method == 'walking')

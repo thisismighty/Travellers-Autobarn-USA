@@ -1,4 +1,8 @@
 <?php
+	/*
+	Template Name: Front Page MIGHTY BACKUP
+	*/
+
 get_header();
 ?>
 
@@ -151,7 +155,7 @@ get_header();
 .section.buy .why-buy .why-buy-box .btn{ width: 100%;}
 
 .section.hire .why-hire .why-hire-box .btn.btn-default,
-.section.buy .why-buy .why-buy-box .btn.btn-default{ font-size: 22px; padding: 10px 0; }
+.section.buy .why-buy .why-buy-box .btn.btn-default{ font-size: 28px; padding: 10px 0; }
 
 .section.hire .why-hire  h4 { color: #fff; font-size: 28px; letter-spacing:-1px; font-weight: normal; margin: 0px 0px 10px 0px; font-family:"Montserrat",Arial,Verdana,Helvetica;}
 
@@ -314,14 +318,13 @@ margin-top:20px;
 	}
 	
 	.banner .text .main-heading .slider-subheading{
-		font-size: 16px !important;
-		line-height: 1em;
-		display: inline-block;
+		font-size:29px !important;
+		line-height:1em;
 	}
 	
 	.banner .text{
 		left:50%;
-		width:450px !important;
+		width:300px !important;
 	}
 	
 	.banner .text.slide_center{
@@ -442,27 +445,15 @@ margin-top:20px;
 </style>
 <div class="container relative hidden-xs">
 <div class="booking-container hidden-xs">
-    <?php 
-		if(0)
-		include("includes/booking-form-usa.php");
-		else
-		include("includes/booking-form-usa-v3.php");
-	
-	?>
+    <?php include("includes/booking-form.php"); ?>
 </div> <!-- banner-container -->
 </div>
     <?php include("includes/standard-slider.php"); ?>
 
 <div class="buttons visible-xs book-now-button">
 	<a href="javascript:void(0)" onclick="$('#slide-down-booking-form').slideDown();$(this).hide();" class="btn btn-default">GET A QUOTE &amp; BOOK &gt;</a>
-	<div id="slide-down-booking-form" style="display:none">
-		 <?php 
-			if(0)
-			include("includes/booking-form-usa.php");
-			else
-			include("includes/booking-form-usa-v3.php");
-		
-		?>
+	<div id="slide-down-booking-form" style="display:none;">
+		<?php include("includes/booking-form.php"); ?>
 	</div>
 </div> <!-- buttons -->
 
@@ -486,11 +477,9 @@ margin-top:20px;
 
             <div class="col-lg-4 col-md-4 col-sm-5 hidden-xs special-deals-box padding">
 				
-                <!--<a href="<?php the_field('roadtrip_link', 'option');?>">-->
-				<a href="<?php echo get_permalink(2627); ?>">
-				<img src="<?php echo get_site_url();?>/wp-content/themes/travellers-autobarn/assets/images/general/special-offers-img.png" class="btn-alignright-less-margin alignright img-responsive" /></a>
+                <a href="/car-deals-and-campervan-specials/"><img src="<?php echo get_site_url();?>/wp-content/themes/travellers-autobarn/assets/images/general/special-offers-img.png" class="btn-alignright-less-margin alignright img-responsive" /></a>
 
-				<a href="<?php the_field('roadtrip_link', 'option');?>" class="btn btn-default alignright btn-alignright-less-margin">Road Trips</a>
+				<a href="<?php the_field('customer_reviews');?>" class="btn btn-default alignright btn-alignright-less-margin">Customer Reviews</a>
 
             </div> <!-- sign-up -->
         </div> <!-- row -->
@@ -520,7 +509,7 @@ margin-top:20px;
 		</ul>
 		<?php
 			$myposts = get_posts(array(
-				'posts_per_page'	=> 2,
+				'posts_per_page'	=> 3,
 				'offset'			=> 0,
 				'category'			=> get_cat_ID( 'Rentals' ),
 				'orderby'			=> 'menu_order',
@@ -551,7 +540,7 @@ margin-top:20px;
 				<a class="item" href="<?php the_permalink();?>">
 					<img src="<?php echo $img['url'];?>" class="img-responsive">
 					<?php echo $most_popular_html?>
-					<span>RENT</span>
+					<span>HIRE</span>
 				</a>
 			<?php endforeach; wp_reset_postdata(); ?>
 
@@ -585,7 +574,7 @@ margin-top:20px;
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8  col-sm-7 padding bg-yellow">
-                <h5>Rent</h5>  
+                <h5>hire</h5>  
                 <h3 class="hidden-xs">
                     <?php 
                         if(get_field('hire_our_cars_title') !=""):
@@ -600,7 +589,7 @@ margin-top:20px;
                     $hide ="";
 
                     $args = array(
-                        'posts_per_page'   => 2,
+                        'posts_per_page'   => 4,
                         'offset'           => 0,
                         'category'  => get_cat_ID( 'Rentals' ),
 
@@ -641,7 +630,7 @@ margin-top:20px;
 								$most_popular_html='<img src="'.get_template_directory_uri().'/img/most-popular-homepage.png" class="most-popular" />';
 							}
                 ?>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 range <?php echo $hide;?>">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-4 range <?php echo $hide;?>">
                     <div class="item">
                         <a href="<?php the_permalink();?>"><img src="<?php echo $img['url'];?>" class="img-responsive">
                         <i class="logo-icon"></i></a>
@@ -688,7 +677,7 @@ margin-top:20px;
 
                     <?php 
                         if(get_field('why_hire_from_us_link', 'option') !=""):                       
-                            echo '<a href="'.get_field('why_hire_from_us_link', 'option').'" class="btn btn-default">See our Campervans</a>';
+                            echo '<a href="'.get_field('why_hire_from_us_link', 'option').'" class="btn btn-default">View our Vehicles</a>';
                         endif;
                     ?>
                 </div> <!-- why-hire-box -->
@@ -698,74 +687,15 @@ margin-top:20px;
 </div><!-- section hire -->
     
 
-<!-- MIGHTY Reviews Section -->
-
-<style>
-  
-  .mighty-reviews { overflow: hidden; }
-  .mighty-reviews hr { margin: 20px 0; }
-  
-  .grw-slider .grw-slider-prev,
-  .grw-slider .grw-slider-next {
-    background-image: url('https://www.travellers-autobarn.co.nz/wp-content/uploads/2017/12/chevron.png');
-    background-position: center;
-    background-size: 30px 30px;
-  }
-  
-  .grw-slider .grw-slider-prev {
-    transform: rotate(180deg);
-  }
-  
-  .grw-slider .grw-slider-prev span,
-  .grw-slider .grw-slider-next span {
-    visibility: hidden;
-  }
-  
-  .gr-container {
-    position: relative;
-  }
-  
-  .gr-more-reviews-button {
-    display: block;
-    position: absolute;
-    bottom: 25px;
-    right: 15px;
-  }
-  
-  .gr-more-reviews-button-img {
-    width: 180px;
-  }
-  
-</style>
-
-<div class="section mighty-reviews">
-
-  <div class="container">      
-    <div class="row gr-container">
-      <div class="col-xs-12">
-        <h2>Happy Campers</h2>
-        <hr>
-        <?php echo do_shortcode("[google-reviews-pro place_name='Travellers Autobarn Auckland' place_id=ChIJb0okt7dODW0RIuIjs941qB0 auto_load=true sort=1 min_filter=4 text_size=200 view_mode=slider slider_speed=5 slider_count=3 open_link=true nofollow_link=true reviews_lang=en]"); ?>
-        <hr>
-        <a target="_blank" href="https://goo.gl/maps/hvm1RYKrUSn" class="gr-more-reviews-button"><img class="gr-more-reviews-button-img" alt="More Reviews on Google" src="https://www.travellers-autobarn.co.nz/wp-content/uploads/2017/12/more-reviews-on-google.png"></a>
-      </div>
-    </div>
-  
-  </div>
-  
-</div>
-
-<!-- END MIGHTY Reviews Section -->
-
 
 <div class="section social-media">
     <div class="container">
         <div class="row">
 			<div class="col-lg-4 col-md-4 hidden-sm social-media-cols" style="border-right:1px solid #000">
-				<h5>USA Road Trips</h5>
+				<h5>Kiwi Road Trip</h5>
 				<div class="social-box">
 					<?php
-						$url = get_field('https://youtu.be/96qKtfM_hJU', 'option');
+						$url = get_field('videos_link', 'option');
 						if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
 							$values = $id[1];
 						} else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
@@ -792,7 +722,7 @@ margin-top:20px;
               <script src="<?php echo get_template_directory_uri();  ?>/assets/js/ekko-lightbox.min.js"></script>
 
               <script type="text/javascript">
-                jQuery(document).ready(function ($) {
+                $(document).ready(function ($) {
                     // delegate calls to data-toggle="lightbox"
                     $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
                         event.preventDefault();
@@ -827,18 +757,22 @@ margin-top:20px;
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4  hidden-sm social-media-cols" style="border-right:1px solid #000">
-				<h5><a href="<?php the_field('facebook_link', 'option');?>" target="_blank">On Facebook</a></h5>
+				<h5><a href="<?php the_field('facebook_link', 'option');?>" target="_blank">Like Us on Facebook</a></h5>
 				<div class="social-box" style="margin:auto; min-height:300px;">
 					<div class="fb-like-box" data-href="https://www.facebook.com/Travellers.AutoBarn" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4  hidden-sm social-media-cols">
 				<h5><a href="<?php the_field('instagram_link', 'option');?>" target="_blank">Instagram</a></h5>
-				<div class="social-box insta-spacing">
+				<div class="social-box">
 					<h5><span><a href="<?php the_field('instagram_link', 'option');?>" target="_blank" style="color:#000;">@TravellersAutobarn</a></span></h5>
-                    <?php //echo do_shortcode('[embedsocial_instagram id="38aa9753f72038a77d2c045701d806cdaf6cb24f"]'); ?>
-                    <?php echo do_shortcode('[instagram-feed]'); ?>
-                </div>
+					<?php foreach(instagram() as $v):?>
+						
+						<a class="no-border" onclick="popup('<?=$v['link']?>', 'SnapWidget', '1024', '720', 'yes');" href="javascript:void(0)">
+							<img src="<?=$v['image']?>" alt="" class="instagram-img"/>
+						</a>
+					<?php endforeach;?>
+				</div>
 			</div>
 			
             

@@ -6,7 +6,8 @@
 
 .top-menu .nav li:nth-last-child(2) a {/* color: #fff !important; */border-right: 1px solid #3c3c3c !important;}
 
-.top-menu .nav li:nth-last-child(1) a { border-right: none; }
+.top-menu .nav li:nth-last-child(1) a { /*border-right: none;*/ }
+/* .top-menu .nav li:first-child a {border-left: 1px solid #3c3c3c;} */
 
 #menu-item-104 a{
     border-right:none !important;
@@ -787,6 +788,9 @@ html .hamburger-social.dark{
 	.blog-page{min-height:600px;}
 }
 @media (max-width: 767px){
+	.insta-spacing{
+		left: 0;
+	}
 	.product-list .text{margin-bottom: 20px;float: left;}
 	.team-popup{
 		max-width: 100%;

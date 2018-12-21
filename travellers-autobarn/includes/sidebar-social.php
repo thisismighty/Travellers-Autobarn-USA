@@ -115,12 +115,13 @@
 		</div>
 	</div>
 	<div class="socials">
-		<h5 style="height:50px">
+		<h5>
 			<a href="<?php the_field('instagram_link', 'option');?>" target="_blank">Instagram</a>
 			<span class="tab_instagram"><a href="<?php the_field('instagram_link', 'option');?>" target="_blank" style="color:#000;">@TRAVELLERSAUTOBARN</a></span>
 		</h5>
 		<div class="social-box insta-spacing">
-            <?php echo do_shortcode('[embedsocial_instagram id="972ac3c028eea7dd70dfce14e7e74598bc732b83"]'); ?>
+            <?php //echo do_shortcode('[embedsocial_instagram id="972ac3c028eea7dd70dfce14e7e74598bc732b83"]'); ?>
+            <?php echo do_shortcode('[instagram-feed]'); ?>
 		</div>
 	</div>
 	<?php //endif; ?>

@@ -183,7 +183,7 @@
                             
 
                     $tabs.="<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 how-to-get'>";           
-                        if (have_rows('how_to_get_here_from_airport', $id) || have_rows('how_to_get_here_from_the_city', $id)){
+                        if (have_rows('how_to_get_here_from_airport', $id) || have_rows('how_to_get_here_from_the_city', $id) || have_rows('how_to_get_here_from_santa_monica', $id)){
                             $tabs.="<div class='panel-orange rounded-corners-med'>
 
                                 <div class='padding'>";
@@ -207,6 +207,22 @@
                                         $tabs.="<h3>How to get here from the city</h3>
                                             <ul class='travel-icons'>";
                                                 while(have_rows('how_to_get_here_from_the_city', $id)):
+                                                    the_row();
+                                                    $method = strtolower(get_sub_field('method'));
+                                                    if ($method == 'walking')
+                                                    {
+                                                        $method = 'walk';
+                                                    }
+                                                    $description = get_sub_field('description');
+                                                    $tabs.="<li class='$method'>$description</li>";
+                                                endwhile;
+                                            $tabs.="</ul>";
+                                    endif; 
+									
+									if (have_rows('how_to_get_here_from_santa_monica', $id)):
+                                        $tabs.="<h3>How to get here from Santa Monica</h3>
+                                            <ul class='travel-icons'>";
+                                                while(have_rows('how_to_get_here_from_santa_monica', $id)):
                                                     the_row();
                                                     $method = strtolower(get_sub_field('method'));
                                                     if ($method == 'walking')

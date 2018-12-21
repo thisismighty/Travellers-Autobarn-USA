@@ -1,4 +1,8 @@
 <?php
+	/*
+	Template Name: Home Page
+	*/
+
 get_header();
 ?>
 
@@ -836,8 +840,7 @@ margin-top:20px;
 				<h5><a href="<?php the_field('instagram_link', 'option');?>" target="_blank">Instagram</a></h5>
 				<div class="social-box insta-spacing">
 					<h5><span><a href="<?php the_field('instagram_link', 'option');?>" target="_blank" style="color:#000;">@TravellersAutobarn</a></span></h5>
-                    <?php //echo do_shortcode('[embedsocial_instagram id="38aa9753f72038a77d2c045701d806cdaf6cb24f"]'); ?>
-                    <?php echo do_shortcode('[instagram-feed]'); ?>
+                    <?php echo do_shortcode('[embedsocial_instagram id="38aa9753f72038a77d2c045701d806cdaf6cb24f"]'); ?>
                 </div>
 			</div>
 			
