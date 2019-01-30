@@ -1,0 +1,32 @@
+.product-list .vehicle-header .price-container{text-align:center; float:right; width:auto;padding: 10px;}
+.product-list .vehicle-header .price-container .price-text{display:inline-block; font-size:15px;padding: 13px 5px 0px 5px; top:-13px; position:relative;}
+.product-list .vehicle-header .price-container .price{display:inline-block; font-size:45px; padding: 3px 5px 0px 5px;}
+.product-list .vehicle-header .price-container .price .dollar{font-size:17px;}
+.product-list .vehicle-header .terms{float:right; text-align:right;}
+
+.product-list .info{margin-top: 0;}
+.product-list h3 a{padding-bottom: 0;}
+.product-list .text ul{padding: 6px 0px 4px}
+.product-list .rentals-excerpt{margin: 0;}
+.product-list .call-to-action .btn{font-size: 14px;}
+.product-list .features .featurd .multi{font-size: 13px;}
+.product-list .features-wrap .heading{margin-bottom: 10px;}
+.product-list .features .featurd{width: auto; max-width: 82px;}
+
+.product-detail .price-container { position: relative; overflow: hidden; float: right; background: #f89828; position: relative; margin-bottom: 5px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; padding:10px;}
+.product-detail .price-container .price-text { float: left; text-align: center; text-transform: uppercase; font-family: 'MontserratBold', Arial, Verdana, Helvetica; font-weight: 400; font-style: normal; -webkit-font-smoothing: antialiased; text-transform: uppercase; }
+.product-detail .price-container .price { float: left; padding: 3px 5px 0px 5px; line-height: 1em; letter-spacing: -0.06em; background: #f89828; color: #fff; text-align: center; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; font-family: 'MontserratBold', Arial, Verdana, Helvetica; font-weight: 400; font-style: normal; -webkit-font-smoothing: antialiased; text-transform: uppercase; }
+.product-detail .price-container .disclaimer { line-height: 1.4em; }
+.product-detail .price-container .dollar { line-height: 1.4em; }
+.product-detail .terms { font-size: 11px; text-align:right;}
+
+@media(max-width: 767px){
+	
+	.product-detail .price-box { padding-left: 0; padding-right: 0; }
+	.product-detail .price-box .terms { margin-bottom: 10px; }
+	.product-detail .price-container {float: left;margin-bottom: 10px;}    
+	.product-detail .price-container .price { font-size: 45px; }
+	.product-detail .price-container .price .dollar { font-size: 28px; vertical-align: top; }
+	.product-detail .price-container .price .disclaimer { font-size: 22px; vertical-align: top; }
+	.product-detail .price-container .price-text { font-size: 17px; padding: 13px 10px 0px 10px; }    
+}

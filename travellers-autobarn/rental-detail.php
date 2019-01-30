@@ -4,7 +4,7 @@
     */
     get_header();
 ?> 
-			
+<!--<link rel="stylesheet" href="/wp-content/themes/travellers-autobarn/assets/css/custom-4.css">-->		
 <style>
 	h1{
 		margin:0 0 5px!important;
@@ -171,16 +171,44 @@
         
         
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padding content">
-              
-              
-            <div class="col-xs-12 title">
-			<?php /* <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 title"> */ ?>
+            <?php /*
+			<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 title">
 
             <h1><?php the_title(); ?></h1>
 			
               <h2><?php the_field('subtitle');?></h2>
 
             </div> <!-- title -->
+        
+			
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 price-box">
+
+               <div class="price-container">
+
+                    <div class="price-text">From</div>
+                    <div class="price">
+                    <span class="dollar">$</span><?php echo str_replace('$','',get_field('price'));?><span class="disclaimer">*</span>
+                    </div>
+                    <div class="price-text">a day</div>
+
+                </div> <!-- price-container -->
+
+                <BR class="clear-fix">  
+                    
+                <div class="terms">*Conditions Apply - Prices may vary in Peak Seasons</div>
+
+            </div>
+			*/ ?>
+            
+            <div class="col-xs-12 title">
+			<!-- <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 title"> -->
+
+            <h1><?php the_title(); ?></h1>
+			
+              <h2><?php the_field('subtitle');?></h2>
+
+            </div> <!-- title -->
+			
         
 			<?php /*
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 price-box">
@@ -285,8 +313,9 @@
 					</div>
 				 </div>
 			</div>
+			<div class="clear-fix"></div>
 
-
+<?php /*
 <div class="row">
 <?php
 function youtubeid($url){
@@ -312,7 +341,37 @@ if($id!==false){
 }
 ?>
 </div> <!-- row -->
+*/ ?>	
+		<?php if ( get_field('youtube_video_url') ): ?>
+		<div class="row">
 
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 video">
+
+                <a href="<?php the_field('youtube_video_url')?>" data-toggle="lightbox" class="lightbox-video">
+                  <div class="play-video"></div>
+                  <?php 
+                  
+                    $url = get_field('youtube_video_url');
+                    if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/v\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    }
+                    $yt_img = "//img.youtube.com/vi/$values/0.jpg";
+                        
+                  ?>
+                  <img src="<?php echo $yt_img?>" class="img-responsive" style="width:100%;">
+              </a>
+
+            </div> <!-- video -->
+            
+        </div> <!-- row -->
+		<?php endif; ?>
+		
         <div class="row specs-section">
           
 			<h4>Specification Sheet</h4>
@@ -449,11 +508,16 @@ if($id!==false){
 
 			<table cellpadding="0" cellspacing="0" border="0">
 			<tr class="header">
-			<td>Living Equipment</td>
+			<?php if(get_field('living_equipment_heading')): ?>
+				<td><?php echo get_field('living_equipment_heading');?></td>
+			<?php else: ?>
+				<td>Living Equipment</td>
+			<?php endif; ?>
 			</tr>
-			<?php if(is_page(2525) || is_page(5014)): ?>
+			<?php //if(is_page(2525) || is_page(5014)): ?>
+			<?php if(get_field('living_equipment_sub_heading')): ?>
 			<tr class="sub-header">
-			<td>$45 fee applies</td>
+			<td><?php echo get_field('living_equipment_sub_heading');?></td>
 			</tr>
 			<?php endif; ?>
 			<?php
@@ -477,14 +541,17 @@ if($id!==false){
 			?>
 			</table>
 			
+			<?php /*
 			<div class="download" style="padding-bottom:20px;"> 
                 <?php $specs = get_field('spec_sheet');?>
                
-              
+				<a href="<?php echo $specs['url'];?>" target="_blank">
+					<img src="<?php echo get_template_directory_uri();  ?>/assets/images/general/download-spec-sheet.jpg" class="download-button" alt="download" id="btn-pdf-download" onClick='trackPdfDLButton("PDF - Rental - <?php global $post; echo $post->post_name; ?>");'/>
+				</a>
                 
 
             </div>
-				
+			*/ ?>
 				
 			</div> <!-- specs -->
         </div> 
@@ -494,11 +561,76 @@ if($id!==false){
           
         <?php the_field('content_2');?>
           
-		
+		<div class="row specs-section" style="padding-bottom:30px; padding-top:20px;">
+          
+			
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				
+				<?php 
+                  
+                    $url = get_field('youtube_video_url_1');
+                    if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/v\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    }
+                    $yt_img = "//img.youtube.com/vi/$values/0.jpg";
+                        
+                  ?>
+				<?php if (get_field('youtube_video_url_1')):?>
+					<h3 class="videos-title"><?php the_field('youtube_video_title_1') ?></h3>
+					<div class="vid-box">
+					<a href="<?php the_field('youtube_video_url_1')?>" data-toggle="lightbox" class="lightbox-video">
+						<div class="play-video small"></div>
+
+						<img src="<?php echo $yt_img?>" class="img-responsive" style="width:100%; max-height:400px; margin-bottom:10px;">
+					</a>
+					</div>
+					
+				<?php endif;?>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 <?php if (!get_field('youtube_video_url_1')){ echo "col-lg-pull-6 col-md-pull-6";}?>">
+				<h3 class="videos-title" style="color:#000 !important;"><?php the_field('rentals_video_title', 'option') ?></h3>
+				<?php 
+                  
+                    $url = get_field('rentals_video', 'option');
+                    if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtube\.com\/v\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    } else if (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+                        $values = $id[1];
+                    }
+                    $yt_img = "//img.youtube.com/vi/$values/0.jpg";
+                        
+                  ?>
+				<div class="vid-box">
+				<a href="<?php the_field('rentals_video', 'option')?>" data-toggle="lightbox" class="lightbox-video">
+					
+					<div class="play-video small"></div>
+
+					<img src="<?php echo $yt_img?>" class="img-responsive" style="width:100%; max-height:400px; margin-bottom:10px;">
+				</a>
+				</div>
+			</div>
+			<div class="clear"></div>	
+			<div style="padding:15px;">
+				
+				<a class="btn btn-default more-videos-btn" target="_blank" href="<?php the_field('videos_channel', 'option')?>">More</a>
+			</div>
+			
+			
+		</div>
 		
         <div class="buttons">
             <a href="<?php echo get_site_url();?>/quick-quote/" class="btn btn-default visible-xs">Get a Quote & Book</a>
-            <!-- <a href="<?php the_field('quick_quote_link', 'option');?>" class="btn btn-default hidden-xs">Email Us</a> -->
+            <a href="<?php echo get_permalink(5046); ?>" class="btn btn-default hidden-xs">Email Us</a>
             <a class="btn btn-default" href="<?php echo get_site_url();?>/contact-us/">Call Us</a>
             <a href="<?php echo get_site_url();?>/rv-rental-locations-usa/" class="btn btn-default">Visit Us</a>
         </div> <!-- buttons -->    

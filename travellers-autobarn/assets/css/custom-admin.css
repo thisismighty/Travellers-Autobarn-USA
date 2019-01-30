@@ -1,1 +1,2 @@
-body.post-type-post .acf_postbox h2.hndle.ui-sortable-handle{display: none;}
+body.post-type-post .acf_postbox h2.hndle.ui-sortable-handle,
+body.post-type-page .acf_postbox h2.hndle.ui-sortable-handle{display: none;}

@@ -5,6 +5,7 @@
 
 get_header();
 ?>
+<!--<link rel="stylesheet" href="/wp-content/themes/travellers-autobarn/assets/css/custom-4.css">-->
 <?php //include("includes/breadcrumbs.php"); ?>
 <style>
 	.product-list .info{
@@ -63,16 +64,16 @@ get_header();
                         'exclude'          => '',
                         'post_type'        => 'page',
                         'post_mime_type'   => '',
-						'posts_per_page'	   => 2,
+						// 'posts_per_page'	   => 2,
                         'post_parent'      => '',
-                        'post_status'      => 'publish',
+                        'post_status'      => array('publish'),
                         'suppress_filters' => true );
            
         
             
                         $myposts = get_posts( $args );
                         
-                        
+                        // echo "<pre>"; print_r($myposts); echo "</pre>";
                         foreach ( $myposts as $post ) : 
                             setup_postdata( $post ); 
                             $subtitle = get_field('subtitle');
@@ -85,9 +86,30 @@ get_header();
 							}
                 ?>
                                 <div class="product-list">
+									<?PHP /*
+									<div class="vehicle-header row">
+										<div class="col-md-7 col-lg-7">
+											<h3><a href="<?php the_permalink();?>"><?php echo $post->post_title;?></a></h3>
+											<h4><?php echo $subtitle;?></h4>
+										</div>
+										<div class="col-md-5 col-lg-5" style="padding-left:0;">
+											<div class="price-container hidden-xs hidden-sm">
+												<div class="price-text">From</div>
+												<div class="price">
+													<span class="dollar">$</span><?php if($price) echo $price; else echo '35';?><span class="disclaimer">*</span>
+												</div>
+												<div class="price-text">a day</div>
+											</div>
+											
+											<div class="terms hidden-xs">*Conditions Apply - Prices may vary in Peak Seasons</div>
+											
+										</div>
+									</div>
+									*/ ?>
+									
 									<h3><a href="<?php the_permalink();?>"><?php echo $post->post_title;?></a></h3>
                                     <h4><?php echo $subtitle;?></h4>
-										
+									
                                     <div class="info">
 
                                         <div class="image">
@@ -125,31 +147,73 @@ get_header();
 														<?php foreach ($quick_facts as $quick_fact) : ?>
 															<?php if ($quick_fact == 'adults'): ?>
 																<div class="featurd adult">
-																	<img src="<?php echo $get_template; ?>/assets/images/adult.png">
-																	<span class="multi">Adults<?php if($adult_value) echo ': ' . $adult_value; ?></span>
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/adult.png">
+																	<span class="multi">Adults<?php if($adult_value) echo '<br>' . $adult_value; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'tent' || $quick_fact == 'tent_opt'): ?>
+																<div class="featurd tent">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/tent.png">
+																	<span class="multi">Tent<?php if ($quick_fact == 'tent_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'chairs' || $quick_fact == 'chairs_opt'): ?>
+																<div class="featurd chairs">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/chairs.png">
+																	<span class="multi">Chairs<?php if ($quick_fact == 'chairs_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'esky' || $quick_fact == 'esky_opt'): ?>
+																<div class="featurd esky">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/esky.png">
+																	<span class="multi">Esky<?php if ($quick_fact == 'esky_opt') echo '<br>Optional'; ?></span>
 																</div>
 															<?php endif; ?>
 															<?php if ($quick_fact == 'microwave' || $quick_fact == 'microwave_opt'): ?>
 																<div class="featurd microwave">
-																	<img src="<?php echo $get_template; ?>/assets/images/microwafe.png">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/microwafe.png">
 																	<span class="multi">Microwave<?php if ($quick_fact == 'microwave_opt') echo '<br>Optional'; ?></span>
 																</div>
 															<?php endif; ?>
 															<?php if ($quick_fact == 'fridge' || $quick_fact == 'fridge_opt'): ?>
 																<div class="featurd fridge">
-																	<img src="<?php echo $get_template; ?>/assets/images/fridge.png">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/fridge.png">
 																	<span class="multi">Fridge<?php if ($quick_fact == 'fridge_opt') echo '<br>Optional'; ?></span>
 																</div>
 															<?php endif; ?>
 															<?php if ($quick_fact == 'gas_cooker' || $quick_fact == 'gas_cooker_opt'): ?>
 																<div class="featurd gas-cooker">
-																	<img src="<?php echo $get_template; ?>/assets/images/gascooker-sink.png">
-																	<span class="multi">Gas Cooker<br>& Sink<?php if ($quick_fact == 'gas_cooker_opt') echo '<br>Optional'; ?></span>
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/gascooker.png">
+																	<span class="multi">Gas<br>Cooker<?php if ($quick_fact == 'gas_cooker_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'sink' || $quick_fact == 'sink_opt'): ?>
+																<div class="featurd sink">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/sink.png">
+																	<span class="multi">Sink<?php if ($quick_fact == 'sink_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'light' || $quick_fact == 'light_opt'): ?>
+																<div class="featurd light">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/light.png">
+																	<span class="multi">Light<?php if ($quick_fact == 'light_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'usb' || $quick_fact == 'usb_opt'): ?>
+																<div class="featurd usb">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/usb.png">
+																	<span class="multi">Usb<?php if ($quick_fact == 'usb_opt') echo '<br>Optional'; ?></span>
+																</div>
+															<?php endif; ?>
+															<?php if ($quick_fact == 'ice_box' || $quick_fact == 'ice_box_opt'): ?>
+																<div class="featurd ice_box">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/ice_box.png">
+																	<span class="multi">Ice Box<?php if ($quick_fact == 'ice_box_opt') echo '<br>Optional'; ?></span>
 																</div>
 															<?php endif; ?>
 															<?php if ($quick_fact == 'solar_panel' || $quick_fact == 'solar_panel_opt'): ?>
 																<div class="featurd solar-panel">
-																	<img src="<?php echo $get_template; ?>/assets/images/solar-panel.png">
+																	<img src="<?php echo $get_template; ?>/assets/images/facts/solar-panel.png">
 																	<span class="multi">Solar<br>Panel<?php if ($quick_fact == 'solar_panel_opt') echo '<br>Optional'; ?></span>
 																</div>
 															<?php endif; ?>
