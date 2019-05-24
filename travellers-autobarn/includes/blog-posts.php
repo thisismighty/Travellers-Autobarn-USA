@@ -45,7 +45,7 @@ if (have_posts()):
 		<?php
 		endif;
 		
-		echo '<div class="bg"></div>';
+		// echo '<div class="bg"></div>';
 		echo '</div>';
 		
 		$short_title = get_field('short_title');			
